@@ -1,0 +1,61 @@
+// pages/index.js (jika Next.js)
+import React from "react";
+
+export default function Home() {
+  return (
+    <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-pink-100 via-pink-200 to-pink-300">
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {[...Array(25)].map((_, i) => (
+          <span
+            key={i}
+            className="absolute text-pink-300 opacity-60 animate-pulse"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              fontSize: `${Math.random() * 1.5 + 1}rem`,
+            }}
+          >
+            ❤️
+          </span>
+        ))}
+      </div>
+      <div className="relative z-10 bg-white bg-opacity-90 rounded-2xl shadow-xl p-8 max-w-lg flex flex-col items-center">
+        <h1 className="text-4xl font-bold text-pink-700 mb-2 text-center">
+          Farchan Sayang Dewinta
+        </h1>
+        <p className="text-pink-500 font-medium mb-6 text-center">
+          Terima kasih sudah selalu ada untukku. <br />
+          Semoga kita bisa selamanya bersama 💞
+        </p>
+        <button
+          className="px-6 py-2 bg-pink-500 text-white rounded-full shadow-md hover:bg-pink-600 transition font-semibold mb-6"
+          onClick={() =>
+            document
+              .getElementById("pesan")
+              .scrollIntoView({ behavior: "smooth" })
+          }
+        >
+          Lihat Pesan Spesial
+        </button>
+        <div className="w-full h-48 bg-pink-200 flex items-center justify-center rounded-xl mb-4 shadow-inner">
+          {/* Nanti bisa ganti dengan embed video, sementara placeholder */}
+          <span className="text-pink-400 text-xl">[Video Surprise akan muncul di sini]</span>
+        </div>
+      </div>
+
+      <div
+        id="pesan"
+        className="relative z-10 bg-white bg-opacity-90 rounded-2xl shadow-xl p-8 max-w-lg mt-10 flex flex-col items-center"
+      >
+        <h2 className="text-2xl font-bold text-pink-600 mb-2">Pesan Spesial</h2>
+        <p className="text-gray-700 text-lg text-center">
+          Dewinta, makasih ya udah jadi bagian dari hidup aku.  
+          Dua bulan bareng kamu itu nggak kerasa, tapi setiap harinya selalu berkesan.  
+          Aku bersyukur banget punya kamu yang selalu sabar, supportif, dan nggak pernah ninggalin aku.  
+          Semoga ke depannya kita bisa terus bareng, saling jaga, dan makin sayang.  
+          Love you always! 💖
+        </p>
+      </div>
+    </div>
+  );
+}
